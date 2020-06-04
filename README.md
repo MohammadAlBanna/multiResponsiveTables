@@ -1,10 +1,10 @@
 # MultiResponsiveTables
-Your website is fully responsive? What about tables? This library is for you IF you don't use any CSS frameworks!
+Your website is fully responsive? What about tables? This jQuery function is for you IF you don't use any CSS frameworks (e.g: Bootstrap)!
 
 # Normal Tables
 ![](https://i.imgur.com/UP1oQ2u.png)
 
-# Using the library
+# Using the function
 ![](https://i.imgur.com/TUavnEa.png)
 
 # How to use (JavaScript)
@@ -26,6 +26,33 @@ Your website is fully responsive? What about tables? This library is for you IF 
       $(".responsive-table").multiResponsiveTables();
     });
   </script>
+```
+
+**CSS media query**
+```
+/* This part is very important for responsive screens less than 600px in width */
+@media screen and (max-width: 600px) {
+  table.responsive-table thead {
+    display: none;
+  }
+
+  table.responsive-table tbody td {
+    display: block;
+    padding: .6rem;
+  }
+
+  table.responsive-table tbody tr td:first-child {
+    background: #666;
+    color: #fff;
+  }
+
+  table.responsive-table tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    padding-right: 10px;
+  }
+}
 ```
 
 # URLs
