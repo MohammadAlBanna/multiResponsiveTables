@@ -1,0 +1,58 @@
+/* General style for tables */
+/* Main style taken from: http://codepen.io/dudleystorey/pen/Geprd */
+table.responsive-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Agenda-Light, sans-serif;
+  font-weight: 100;
+  background: #333; color: #fff;
+  text-rendering: optimizeLegibility;
+  border-radius: 5px;
+}
+
+table.responsive-table thead th {
+  font-weight: 600;
+}
+
+table.responsive-table thead th,
+table.responsive-table tbody td {
+  padding: .8rem;
+  font-size: 1.4rem;
+}
+
+table.responsive-table tbody td {
+  padding: .8rem;
+  font-size: 1.4rem;
+  color: #444;
+  background: #eee;
+}
+
+table.responsive-table tbody tr:not(:last-child) {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---------------------------------------------------- */
+/* This part is very important for responsive screens less than 600px in width */
+@media screen and (max-width: 600px) {
+  table.responsive-table thead {
+    display: none;
+  }
+
+  table.responsive-table tbody td {
+    display: block;
+    padding: .6rem;
+  }
+
+  table.responsive-table tbody tr td:first-child {
+    background: #666;
+    color: #fff;
+  }
+
+  table.responsive-table tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    padding-right: 10px;
+  }
+}
